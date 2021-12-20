@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <title>Python compiler</title>
+    <script src="static/sty.js">
+
+
+    </script>
+    <style>
+     table, footer {
+       margin: 20px auto;
+       text-align: right;
+     }
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+label {
+	cursor: pointer;
+	color: green;
+	display: block;
+}
+body{
+background:antiquewhite;
+}
+</style>
+</head>
+<body style="font-family:Verdana;" ><br>
+    <h1 style="text-align:center;">Obula's Python and Pandas online compiler</h1><br>
+
+    <form action="/runcode" method="POST">
+        <div style="width:100%;">
+        <div class="form-group" style="margin-left:40px; float:left; width:60%;">
+        <label for="codearea">Write your code</label>
+        <textarea type="text" class="form-control" id="codearea" name="codearea" rows="15" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">{{ code }}</textarea>
+        </div>
+        <div class="form-group" style="float:right; width:30%;margin-right:50px;">
+        <label for="output">Output</label>
+        <textarea type="text" class="form-control" id="output" name="output" rows="15" disabled> {{ output }} </textarea>
+        </div>
+        </div>
+  <button type="submit" class="btn btn-primary" style="margin-left:50px;">Run</button>
+</form>
+
+
+  </body>
+</html>
